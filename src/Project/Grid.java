@@ -13,6 +13,7 @@ public class Grid {
         this.x0 = x0;
         this.y0 = y0;
         this.h = (X-x0)/n;
+        this.n = n;
         x = new double[n+1];
         for (int i = 0; i <= n; i++){
             x[i] = i*h+x0;

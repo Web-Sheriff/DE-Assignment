@@ -10,13 +10,15 @@ public class IEuler extends Grid {
     }
 
     public void IEulerMethod() {
+        x[0] = x0;
+        y[0] = y0;
         double a;
         double b;
 
-        for (int i = 0; i <= n; i++) {
-            a = RightHandSight.RHS(x[i],y[0]);
-            b = RightHandSight.RHS(x[i+1],y[0]+h*a);
-            y[i+1] = y[i]+h/2*(a+b);
+        for (int i = 1; i <= n; i++) {
+            a = RightHandSight.RHS(x[i-1],y[i-1]);
+            b = RightHandSight.RHS(x[i-1]+(h/2),y[i-1]+(h/2)*a);
+            y[i] = y[i-1]+h*b;
         }
     }
 }

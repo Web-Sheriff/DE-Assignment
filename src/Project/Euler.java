@@ -10,8 +10,10 @@ public class Euler extends Grid{
     }
 
     public void EulerMethod() {
-        for (int i = 0; i <= n; i++) {
-            y[i+1] = y[i]+h* RightHandSight.RHS(x[i],y[i]);
+        x[0] = x0;
+        y[0] = y0;
+        for (int i = 1; i <= n; i++) {
+            y[i] = y[i-1]+h* RightHandSight.RHS(x[i-1],y[i-1]);
         }
      }
 }
