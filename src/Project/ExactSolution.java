@@ -6,6 +6,7 @@ public class ExactSolution extends IVP {
 
     public ExactSolution(double X, double x0, double y0, int n) {
         super(X, x0, y0, n);
+        y = new double[n+1];
     }
 
     public void ParticularSolution() {
