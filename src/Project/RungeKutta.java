@@ -17,7 +17,7 @@ public class RungeKutta extends Grid{
             double a = RightHandSight.RHS(x[i-1], y[i-1]);
             double b = RightHandSight.RHS(x[i-1]+h/2,y[i-1]+h/2*a);
             double c = RightHandSight.RHS(x[i-1]+h/2, y[i-1]+h/2*b);
-            double d = RightHandSight.RHS(x[i-1]+h/2, y[i-1]+h/2*c);
+            double d = RightHandSight.RHS(x[i-1]+h, y[i-1]+h*c);
 
             y[i] = y[i-1] + h/6*(a+2*b+2*c+d);
         }

@@ -15,15 +15,16 @@ public class LocalError{
     }
 
     public void findError() {
-        for (int i = 0; i < x.length; i++) {
-            error[i] = exactSol[i] - methodSol[i];
+        for (int i = 0; i < error.length; i++) {
+            error[i] = Math.abs(exactSol[i] - methodSol[i]);
         }
     }
 
     public double maxError() {
         double max = 0;
-        for (int i = 0; i <= x.length; i++) {
-            max = x[i] > max? x[i] : max;
+        for (int i = 0; i < error.length; i++) {
+            if (error[i] > max)
+                max = error[i];
         }
         return max;
     }
