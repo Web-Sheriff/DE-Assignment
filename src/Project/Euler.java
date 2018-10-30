@@ -13,7 +13,7 @@ public class Euler extends Grid{
         x[0] = x0;
         y[0] = y0;
         for (int i = 1; i <= n; i++) {
-            y[i] = y[i-1]+h* RightHandSight.RHS(x[i-1],y[i-1]);
+            y[i] = y[i-1]+h* RightHandSide.RHS(x[i-1],y[i-1]);
         }
      }
 }

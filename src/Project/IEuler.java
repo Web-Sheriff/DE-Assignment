@@ -16,8 +16,8 @@ public class IEuler extends Grid {
         double b;
 
         for (int i = 1; i <= n; i++) {
-            a = RightHandSight.RHS(x[i-1],y[i-1]);
-            b = RightHandSight.RHS(x[i-1]+(h/2),y[i-1]+(h/2)*a);
+            a = RightHandSide.RHS(x[i-1],y[i-1]);
+            b = RightHandSide.RHS(x[i-1]+(h/2),y[i-1]+(h/2)*a);
             y[i] = y[i-1]+h*b;
         }
     }

@@ -14,10 +14,10 @@ public class RungeKutta extends Grid{
         x[0] = x0;
         y[0] = y0;
         for (int i = 1; i <= n; i++) {
-            double a = RightHandSight.RHS(x[i-1], y[i-1]);
-            double b = RightHandSight.RHS(x[i-1]+h/2,y[i-1]+h/2*a);
-            double c = RightHandSight.RHS(x[i-1]+h/2, y[i-1]+h/2*b);
-            double d = RightHandSight.RHS(x[i-1]+h, y[i-1]+h*c);
+            double a = RightHandSide.RHS(x[i-1], y[i-1]);
+            double b = RightHandSide.RHS(x[i-1]+h/2,y[i-1]+h/2*a);
+            double c = RightHandSide.RHS(x[i-1]+h/2, y[i-1]+h/2*b);
+            double d = RightHandSide.RHS(x[i-1]+h, y[i-1]+h*c);
 
             y[i] = y[i-1] + h/6*(a+2*b+2*c+d);
         }
